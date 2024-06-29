@@ -1,0 +1,70 @@
+.Covid {
+    padding: 20px;
+}
+
+.Covid .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid orange;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.Covid h1 {
+    margin-bottom: 20px;
+}
+
+.Covid .form-container {
+    margin-bottom: 20px;
+}
+
+.Covid .form-group {
+    margin-bottom: 15px;
+}
+
+.Covid label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.Covid input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.Covid button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+}
+
+.Covid button:hover {
+    background-color: #0056b3;
+}
+
+.Covid .data-container {
+    margin-top: 20px;
+}
+
+.Covid .data-container h2 {
+    margin-bottom: 15px;
+}
+
+.Covid .data-container p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.Covid .data-container img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}

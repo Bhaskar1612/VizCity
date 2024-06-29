@@ -1,0 +1,53 @@
+.Exchange {
+    padding: 20px;
+    /* Add padding to the entire Exchange component */
+}
+
+.Exchange .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid orange;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Optional: Add background color */
+}
+
+.Exchange h1 {
+    margin-bottom: 20px;
+}
+
+.Exchange button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+}
+
+.Exchange button:hover {
+    background-color: #0056b3;
+}
+
+.Exchange .rates-container {
+    margin-top: 20px;
+}
+
+.Exchange ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.Exchange li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: orangered;
+}
+
+.Exchange strong {
+    margin-right: 10px;
+    color: green;
+}

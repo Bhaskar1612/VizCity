@@ -9,9 +9,11 @@ const Navigation = () => {
 
     const fetchNavigationData = async () => {
     try {
+      setNavigationData(null);
       const response = await axios.get(`http://localhost:8000/navigation/${cityName}`);
-      setNavigationData(response.data);
-      setError(null);
+      setNavigationData(response.data.results[0]);
+      console.log(navigationData);
+      
     }
     catch (error) {
       if (error.response) {
@@ -24,7 +26,7 @@ const Navigation = () => {
     }
   };
 
-    return (
+  return (
         <div className ="navigation-container">
             <div className="input-container">
              <label>City Name:</label>
@@ -34,8 +36,8 @@ const Navigation = () => {
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {navigationData && (
              <div className="result">
-              <h2>Navigation Information for {cityName}</h2>
-              <p>SO :{navigationData.results.qibla} p</p>
+              <h2>Navigation Information for {navigationData.components.country}</h2>
+              <pre>{JSON.stringify(navigationData ,null, 2)}</pre>
              </div>
             )}
 

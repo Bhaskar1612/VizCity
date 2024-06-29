@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 import './UserProfile.css';
 
-const UserProfile = ({ accessToken,navigateToPage }) => {
+function UserProfile() {
+  const location = useLocation();
   const [userData, setUserData] = useState(null);
+  const accessToken = location.state.token;
   
 
   useEffect(() => {
@@ -16,6 +21,7 @@ const UserProfile = ({ accessToken,navigateToPage }) => {
         });
 
         setUserData(response.data);
+        console.log(response.data)
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -32,21 +38,23 @@ const UserProfile = ({ accessToken,navigateToPage }) => {
           <li>
             <strong>Username:</strong> {userData.username}
           </li>
-          <li>
-            <strong>Class:</strong> {userData.Class}
-          </li>
-          <li>
-            <strong>Roll No:</strong> {userData.RollNo}
-          </li>
         </ul>
       ) : (
         <p>Loading user data...</p>
       )}
-
-      <button onClick={() => navigateToPage('weather')}>Go to Weather</button>
-      <button onClick={() => navigateToPage('navigation')}>Go to Navigation</button>
       
-    </div>
+
+        <div className="role-links">
+          <Link to='/Component/Weatherapi' className='role-link'>Weatherapi</Link>
+          <Link to='/Component/Navigation' className='role-link'>Navigation</Link>
+          <Link to='/Component/Translate' className='role-link'>Translate</Link>
+          <Link to='/Component/News' className='role-link'>News</Link>
+          <Link to='/Component/Exchange' className='role-link'>Exchange</Link>
+          <Link to='/Component/Timezone' className='role-link'>Timezone</Link>
+          <Link to='/Component/Covid' className='role-link'>Covid_19_Data</Link>
+        </div>
+      
+      </div>
 
   );
 };

@@ -14,9 +14,9 @@ const Password = ({setCreatedMember}) => {
          } catch(error){
             console.error("error crrating password",error.reponse);
          }
-    }
+    }   
     return (
-        <div className="password-form-container">
+      <div className="password-form-container">
       <h2>Create Password</h2>
       <div className="input-container">
         <label>Name:</label>

@@ -1,8 +1,9 @@
 .navigation-container {
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 4000px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 2px solid orange;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -24,3 +25,4 @@
     color: chartreuse;
     font-weight: bold;
 }
+

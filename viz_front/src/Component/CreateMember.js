@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './CreateMember.css'; // Import your CSS file
 
-const CreateMember = ({setCreatedMember}) => {
+const CreateMember = () => {
+  const navigate = useNavigate();
   const [memberDetails, setMemberDetails] = useState({
     username: '',
     Class: null,
@@ -15,7 +17,7 @@ const CreateMember = ({setCreatedMember}) => {
       const response = await axios.post(`http://localhost:8000/Member`, memberDetails);
 
       console.log('Member created:', response.data);
-      setCreatedMember(3);
+      navigate('/Component/Login');
       // Handle success or navigate to a different page if needed
     } catch (error) {
       console.error('Error creating member:', error.response.data);
@@ -31,16 +33,8 @@ const CreateMember = ({setCreatedMember}) => {
         <input type="text" value={memberDetails.username} onChange={(e) => setMemberDetails({ ...memberDetails, username: e.target.value })} />
       </div>
       <div>
-        <label>Class:</label>
-        <input type="number" value={memberDetails.Class} onChange={(e) => setMemberDetails({ ...memberDetails, Class: parseInt(e.target.value, 10) || null })} />
-      </div>
-      <div>
-        <label>Roll No:</label>
-        <input type="number" value={memberDetails.RollNo} onChange={(e) => setMemberDetails({ ...memberDetails, RollNo: parseInt(e.target.value, 10) || null })} />
-      </div>
-      <div>
-        <label>Disabled:</label>
-        <input type="checkbox" checked={memberDetails.disabled} onChange={(e) => setMemberDetails({ ...memberDetails, disabled: e.target.checked })} />
+        <label>Password:</label>
+        <input type="text" value={memberDetails.hashed_password} onChange={(e) => setMemberDetails({ ...memberDetails, hashed_password: (e.target.value) ?? null })} />
       </div>
       <button onClick={handleCreateMember}>Create Member</button>
     </div>
