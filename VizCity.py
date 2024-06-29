@@ -30,7 +30,7 @@ class Token(BaseModel):
     token_type:str
 
 class TokenData(BaseModel):
-    username:str or None=None 
+    username: Optional[str] = None
 
 class user(BaseModel):
     username:str
@@ -68,6 +68,8 @@ def get_user(name_list,username:str):
     if username in name_list:
         user_data=name_list[username]
         return user_data
+    else:
+        print("error")
     
 def authenticat_user(name_list,username:str,pwd:str):
     user=get_user(name_list,username)
@@ -75,6 +77,7 @@ def authenticat_user(name_list,username:str,pwd:str):
         return False
     if not verify_pwd(pwd,user.hashed_password):
         return False
+    print(user)
     return user
 
 def create_access_token(data:dict,expires_delta:timedelta or None=None):
@@ -89,6 +92,7 @@ def create_access_token(data:dict,expires_delta:timedelta or None=None):
     return encode_jwt
 
 async def get_current_user(token : str = Depends(oauth_2_scheme)):
+    print(token)
     credential_exception = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="Could not validate credentials",headers={"WW.AUTHENTICATE":"BEARER"})
     try:
         payload = jwt.decode(token,SECRET_KEY,algorithms=[ALGORITHM])
@@ -106,11 +110,6 @@ async def get_current_user(token : str = Depends(oauth_2_scheme)):
         raise credential_exception
     return user
 
-async def get_current_active_user(current_user:user=Depends(get_current_user)):
-    if current_user.disabled:
-        raise HTTPException(status_code=400,detail="Inactive User")
-    return current_user
-
 
 @app.post("/token",response_model=Token)
 async def login_for_access_token(from_data : OAuth2PasswordRequestForm = Depends()):
@@ -119,14 +118,15 @@ async def login_for_access_token(from_data : OAuth2PasswordRequestForm = Depends
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="Incorrect username or password",headers={"WW.AUTHENTICATE":"BEARER"})
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(data={"sub":user.username},expires_delta=access_token_expires)
+    print(user)
     return  {"access_token":access_token,"token_type":"bearer"}
 
 
 @app.post("/Member")
 async def create_member(member:user):
-    print(name_list)
     if member.username in name_list:
         return{"Error":"Already exists"}
+    member.hashed_password=get_pwd_hash(member.hashed_password)
     name_list[member.username]=member
     return name_list[member.username]
 
@@ -140,7 +140,7 @@ async def create_password(username:str, pwd:str):
 
 
 @app.get("/users/me",response_model=user)
-async def current_user(current_user:user=Depends(get_current_active_user)):
+async def current_user(current_user:user=Depends(get_current_user)):
     return current_user
 
 @app.get("/weather/{city_name}")
@@ -172,7 +172,7 @@ async def navigation(city_name : str):
 
 @app.get("/news/{city_name}")
 async def news(city_name : str):
-    url = "https://newsapi.org/v2/everything"
+    url = f"https://newsapi.org/v2/everything"
     params = {
         "q": city_name,
          "apiKey": API_KEY3,
@@ -191,7 +191,7 @@ async def translate(language1 : str,language2 : str,Text : str):
     translation = translator.translate(Text)
     return {"original language":language1, "original_text": Text, "translated_text": translation, "target_language": language2}
     
-@app.get("/Global_Currency_Exchnage/")
+@app.get("/Global_Currency_Exchange/")
 async def exchnage():
     url = f"https://openexchangerates.org/api/latest.json?app_id={API_KEY4}"
     
