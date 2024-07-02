@@ -48,12 +48,11 @@ Copy code
 - Run the FastAPI server:
 
 sh
-Copy code
-uvicorn main:app --reload
+-uvicorn main:app --reload
 
 
 ### Frontend Setup
-Navigate to the frontend directory:
+#### Navigate to the frontend directory:
 
 sh
 - cd ../frontend
@@ -65,7 +64,6 @@ sh
 - Start the React development server:
 
 sh
-- Copy code
 - npm start
 - Usage
 - Open your browser and navigate to http://localhost:3000.
