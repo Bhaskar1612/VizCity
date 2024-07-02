@@ -79,12 +79,12 @@ Get comprehensive information about the city, including weather, news, and more.
 ## API Endpoints
 The backend uses the following API endpoints to fetch data:
 
--Weather Information: http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY1}
--Geographical Data: https://api.opencagedata.com/geocode/v1/json?q={city_name}&key={API_KEY2}
--News Articles: https://newsapi.org/v2/everything
--Currency Exchange Rates: https://openexchangerates.org/api/latest.json?app_id={API_KEY4}
--Time Zone Information: http://api.timezonedb.com/v2.1/list-time-zone?key={API_KEY5}&format=json&country={country}
--COVID-19 Statistics: https://disease.sh/v3/covid-19/countries/{Country}
+- Weather Information: http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY1}
+- Geographical Data: https://api.opencagedata.com/geocode/v1/json?q={city_name}&key={API_KEY2}
+- News Articles: https://newsapi.org/v2/everything
+- Currency Exchange Rates: https://openexchangerates.org/api/latest.json?app_id={API_KEY4}
+- Time Zone Information: http://api.timezonedb.com/v2.1/list-time-zone?key={API_KEY5}&format=json&country={country}
+- COVID-19 Statistics: https://disease.sh/v3/covid-19/countries/{Country}
 
 
 ## Technologies Used
@@ -94,12 +94,12 @@ Middleware: CORSMiddleware
 
 
 ### APIs:
--OpenWeatherMap API
--OpenCageData API
--NewsAPI
--OpenExchangeRates API
--TimeZoneDB API
--Disease.sh API
+- OpenWeatherMap API
+- OpenCageData API
+- NewsAPI
+- OpenExchangeRates API
+- TimeZoneDB API
+- Disease.sh API
 
 ## Contributing
 Contributions are welcome! Please follow these steps to contribute:
