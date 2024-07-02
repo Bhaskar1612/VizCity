@@ -54,7 +54,7 @@ Copy code
 uvicorn main:app --reload
 
 
-###Frontend Setup
+### Frontend Setup
 Navigate to the frontend directory:
 
 sh
@@ -76,7 +76,7 @@ Enter the name of the city you want information about.
 Get comprehensive information about the city, including weather, news, and more.
 
 
-##API Endpoints
+## API Endpoints
 The backend uses the following API endpoints to fetch data:
 
 Weather Information: http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_KEY1}
@@ -87,13 +87,13 @@ Time Zone Information: http://api.timezonedb.com/v2.1/list-time-zone?key={API_KE
 COVID-19 Statistics: https://disease.sh/v3/covid-19/countries/{Country}
 
 
-##Technologies Used
+## Technologies Used
 Backend: FastAPI, Python
 Frontend: React.js, HTML, CSS, JavaScript
 Middleware: CORSMiddleware
 
 
-###APIs:
+### APIs:
 OpenWeatherMap API
 OpenCageData API
 NewsAPI
@@ -101,7 +101,7 @@ OpenExchangeRates API
 TimeZoneDB API
 Disease.sh API
 
-##Contributing
+## Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
 Fork the repository.
@@ -121,10 +121,10 @@ git push origin feature/your-feature-name
 Open a pull request.
 
 
-##License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-##Contact
+## Contact
 Bhaskar - bhaskarkashyap1612@gmail.com
 
-##Project Link: https://github.com/yourusername/VizCity
+## Project Link: https://github.com/yourusername/VizCity
