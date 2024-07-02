@@ -27,27 +27,25 @@ VizCity is a web application designed to help people get comprehensive informati
    ```sh
    git clone https://github.com/yourusername/VizCity.git
    cd VizCity/backend
-Create and activate a virtual environment:
+#### Create and activate a virtual environment:
 
 sh
-Copy code
-python -m venv venv
-source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-Install the required packages:
+- python -m venv venv
+- source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+- Install the required packages:
 
 sh
-Copy code
-pip install -r requirements.txt
-Set up environment variables for API keys in a .env file:
+- pip install -r requirements.txt
+- Set up environment variables for API keys in a .env file:
 
 env
 Copy code
-API_KEY1=your_openweathermap_api_key
-API_KEY2=your_opencagedata_api_key
-API_KEY3=your_newsapi_api_key
-API_KEY4=your_openexchangerates_api_key
-API_KEY5=your_timezonedb_api_key
-Run the FastAPI server:
+- API_KEY1=your_openweathermap_api_key
+- API_KEY2=your_opencagedata_api_key
+- API_KEY3=your_newsapi_api_key
+- API_KEY4=your_openexchangerates_api_key
+- API_KEY5=your_timezonedb_api_key
+- Run the FastAPI server:
 
 sh
 Copy code
@@ -58,22 +56,21 @@ uvicorn main:app --reload
 Navigate to the frontend directory:
 
 sh
-Copy code
-cd ../frontend
-Install the required packages:
+- cd ../frontend
+
+#### Install the required packages:
 
 sh
-Copy code
-npm install
-Start the React development server:
+- npm install
+- Start the React development server:
 
 sh
-Copy code
-npm start
-Usage
-Open your browser and navigate to http://localhost:3000.
-Enter the name of the city you want information about.
-Get comprehensive information about the city, including weather, news, and more.
+- Copy code
+- npm start
+- Usage
+- Open your browser and navigate to http://localhost:3000.
+- Enter the name of the city you want information about.
+- Get comprehensive information about the city, including weather, news, and more.
 
 
 ## API Endpoints
@@ -105,20 +102,17 @@ Middleware: CORSMiddleware
 Contributions are welcome! Please follow these steps to contribute:
 
 Fork the repository.
-Create a new branch:
+- Create a new branch:
 sh
-Copy code
-git checkout -b feature/your-feature-name
-Make your changes.
-Commit your changes:
+- git checkout -b feature/your-feature-name
+- Make your changes.
+- Commit your changes:
 sh
-Copy code
-git commit -m 'Add some feature'
-Push to the branch:
+- git commit -m 'Add some feature'
+- Push to the branch:
 sh
-Copy code
-git push origin feature/your-feature-name
-Open a pull request.
+- git push origin feature/your-feature-name
+- Open a pull request.
 
 
 ## License
