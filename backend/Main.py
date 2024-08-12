@@ -9,7 +9,6 @@ from passlib.context import CryptContext
 from translate import Translator
 import requests
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 
 
 

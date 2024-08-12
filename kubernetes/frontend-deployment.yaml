@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vizcity-frontend-deployment
+  labels:
+    app: vizcity-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vizcity-frontend
+  template:
+    metadata:
+      labels:
+        app: vizcity-frontend
+    spec:
+      containers:
+        - name: vizcity-frontend
+          image: bhaskar1612/vizcity-frontend:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vizcity-frontend-service
+spec:
+  selector:
+    app: vizcity-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
