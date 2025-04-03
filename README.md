@@ -23,7 +23,7 @@ VizCity is a web application designed to help people get comprehensive informati
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/VizCity.git
+   git clone https://github.com/Bhaskar1612/VizCity.git
    cd VizCity/backend
    ```
 
